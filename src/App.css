@@ -1,24 +1,33 @@
+/* app.css for tooltip component styling as well as for main div  */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 20rem;
+}
+button {
+  background-color: rgb(41, 40, 40);
+  border-radius: 6px;
+  color: white;
+  text-decoration: underline;
+}
+.tooltip {
+  position: absolute;
+  background-color: rgb(41, 40, 40);
+  border-radius: 8px;
+  padding: 45px;
+  color: white;
+  left: 38%;
+}
+.tooltip::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #000000 transparent transparent transparent;
+  top: 100%;
+  left: 50%;
+  bottom: 50%;
+  right: 50%;
+  margin-left: -5px;
+}
 
-.tooltip-container {
-    position: relative;
-  }
-  
-  .tooltip {
-    position: absolute;
-    background-color: #000000;
-    color: #fff;
-    padding: 10px 10px;
-    border-radius: 11px;
-    z-index: 10;
-  }
-  
-  .tooltip::after {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    border-width: 5px 5px 0 5px;
-    border-color: #000000 transparent transparent transparent;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-  }

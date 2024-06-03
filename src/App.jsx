@@ -1,63 +1,47 @@
-import { useState } from 'react'
-import "./App.css"
+import "./App.css";
+import { useState } from "react";
 
-const Tooltip = ({ children, position, content }) => {
-  const [showTooltip, setShowTooltip] = useState(false);
+// Tooltip component for when the button hover over then it simply shows tooltip info.
+const Tooltip = ({ position = "top" }) => {
+  const [mouseOver, setMouseOver] = useState(false);
 
   const handleMouseOver = () => {
-    setShowTooltip(true);
+    setMouseOver(true);
   };
 
   const handleMouseOut = () => {
-    setShowTooltip(false);
+    setMouseOver(false);
   };
 
-  const tooltipStyle = {
-    top: position === 'top' ? '-20px' : '',
-    bottom: position === 'bottom' ? '-20px' : '',
-    left: position === 'left' ? '5px' : '',
-    right: position === 'right' ? '5px' : '',
+  const toolTipStyle = {
+    top: position === "top" ? "230px" : "",
+    bottom: position === "bottom" ? "29rem" : "",
+    left: position === "left" ? "22rem" : "",
+    right: position === "right" ? "230px" : "",
   };
-
-  return (
-    <div className="tooltip-container flex justify-center mt-20 p-4 ">
-      <button onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}
-        className="py-2 px-5 text-sm font-medium text-white focus:outline-none bg-white rounded-[11px] border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-300 dark:bg-gray-100 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-        {children}
-      </button>
-      {showTooltip && (
-        <div className="tooltip a " style={tooltipStyle}>
-          {content}
-        </div>
-      )}
-    </div>
-  );
-};
-
-function App() {
 
   return (
     <>
-      <Tooltip position="top" content="Thanks for hovering! I'm a tooltip">
+      <button onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
         Hover over me!
-
-      </Tooltip>
-
-      <Tooltip position="bottom" content="Thanks for hovering! I'm a tooltip">
-        Hover over me!
-
-      </Tooltip>
-
-      <Tooltip position="left" content="Thanks for hovering! I'm a tooltip">
-        Hover over me!
-
-      </Tooltip>
-
-      <Tooltip position="right" content="Thanks for hovering! I'm a tooltip">
-        Hover over me!
-      </Tooltip>
+      </button>
+      {mouseOver && (
+        <div className="tooltip" style={toolTipStyle}>
+          Thanks for hovering! I'm a tooltip
+        </div>
+      )}
     </>
-  )
-}
+  );
+};
 
-export default App
+// Main app 
+export default function App() {
+  return (
+    <>
+      <div className="App">
+        {/* here you can pass 'top' ,'right', 'left', 'bottom' for see the diffrent position of tooltip. */}
+        <Tooltip position="top" />
+      </div>
+    </>
+  );
+}

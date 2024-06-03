@@ -1,8 +1,26 @@
-# React + Vite
+## React Tooltip
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+`- This React application is built using [vite](https://vitejs.dev).`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+`- It Uses [Tailwind CSS](https://tailwindcss.com/).`
+
+`- a simple tooltip component such that when I hover over a button it shows me a tooltip.`
+
+
+## Pre-requisites
+
+`- [git](https://git-scm.com/) - v2.13 or greater`
+
+`- [NodeJs](https://nodejs.org/en/) -v16 or greater`
+
+`- [npm](https://www.npmjs.com/) -v6 or greater`
+
+## Running in dev environment
+
+0. `git clone https://github.com/Sahil-Sayyad/React_Tooltip.git`
+1. `cd React_Tooltip`
+2. `npm install`
+7. `npm run dev `
+
